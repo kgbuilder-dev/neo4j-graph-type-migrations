@@ -1,0 +1,2 @@
+MATCH ()-[s:SCHEDULED_AT]->()
+DELETE s;

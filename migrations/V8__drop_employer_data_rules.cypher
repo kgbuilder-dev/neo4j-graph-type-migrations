@@ -1,0 +1,7 @@
+ALTER CURRENT GRAPH TYPE ALTER {
+  (:Person => {name :: STRING NOT NULL})
+};
+
+ALTER CURRENT GRAPH TYPE DROP { ()-[:WORKS_FOR =>]->() };
+
+ALTER CURRENT GRAPH TYPE DROP { (:Organization =>) };

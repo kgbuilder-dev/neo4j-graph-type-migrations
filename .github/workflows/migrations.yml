@@ -1,0 +1,31 @@
+name: migrations
+
+on:
+  workflow_dispatch:
+
+env:
+  NEO4J_PASSWORD: ci-only-password
+  NEO4J_MIGRATIONS_VERSION: 4.2.0
+
+jobs:
+  migrate-and-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Neo4j-Migrations CLI
+        run: |
+          curl -sSL -o nm.zip "https://github.com/michael-simons/neo4j-migrations/releases/download/${NEO4J_MIGRATIONS_VERSION}/neo4j-migrations-${NEO4J_MIGRATIONS_VERSION}-linux-x86_64.zip"
+          unzip -q nm.zip -d nm
+          bin=$(find "$PWD/nm" -type f -name neo4j-migrations | head -n 1)
+          chmod +x "$bin"
+          dirname "$bin" >> "$GITHUB_PATH"
+
+      - name: Start Neo4j Enterprise
+        run: scripts/start-neo4j.sh
+
+      - name: Apply migrations release by release, with invariants
+        run: scripts/run-migrations.sh
+
+      - name: Check the graph type claims from the article
+        run: scripts/check-claims.sh

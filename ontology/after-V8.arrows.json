@@ -1,0 +1,222 @@
+{
+  "nodes": [
+    {
+      "id": "n0",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "caption": "",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "name": "STRING!",
+        "email (removed)": "STRING"
+      },
+      "style": {}
+    },
+    {
+      "id": "n1",
+      "position": {
+        "x": 350,
+        "y": 0
+      },
+      "caption": "",
+      "labels": [
+        "Talk"
+      ],
+      "properties": {
+        "title": "STRING!",
+        "level": "STRING"
+      },
+      "style": {}
+    },
+    {
+      "id": "n2",
+      "position": {
+        "x": 700,
+        "y": 0
+      },
+      "caption": "",
+      "labels": [
+        "Topic"
+      ],
+      "properties": {
+        "name": "STRING!"
+      },
+      "style": {}
+    },
+    {
+      "id": "n3",
+      "position": {
+        "x": 700,
+        "y": 500
+      },
+      "caption": "",
+      "labels": [
+        "Event"
+      ],
+      "properties": {
+        "name": "STRING!",
+        "date": "DATE!"
+      },
+      "style": {}
+    },
+    {
+      "id": "n4",
+      "position": {
+        "x": 0,
+        "y": -300
+      },
+      "caption": "",
+      "labels": [
+        "Organization"
+      ],
+      "properties": {
+        "name": "STRING!"
+      },
+      "style": {
+        "border-color": "#c62828",
+        "node-color": "#ffebee"
+      }
+    },
+    {
+      "id": "n5",
+      "position": {
+        "x": 350,
+        "y": 300
+      },
+      "caption": "",
+      "labels": [
+        "Session"
+      ],
+      "properties": {
+        "start": "LOCAL DATETIME!",
+        "recording": "STRING"
+      },
+      "style": {}
+    },
+    {
+      "id": "n6",
+      "position": {
+        "x": 0,
+        "y": 500
+      },
+      "caption": "",
+      "labels": [
+        "Room"
+      ],
+      "properties": {
+        "name": "STRING!",
+        "capacity": "INTEGER"
+      },
+      "style": {}
+    }
+  ],
+  "relationships": [
+    {
+      "id": "r0",
+      "type": "PRESENTS",
+      "fromId": "n0",
+      "toId": "n1",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "r1",
+      "type": "ABOUT",
+      "fromId": "n1",
+      "toId": "n2",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "r2",
+      "type": "WORKS_FOR",
+      "fromId": "n0",
+      "toId": "n4",
+      "properties": {},
+      "style": {
+        "arrow-color": "#c62828"
+      }
+    },
+    {
+      "id": "r3",
+      "type": "PRESENTED_IN",
+      "fromId": "n1",
+      "toId": "n5",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "r4",
+      "type": "IN_ROOM",
+      "fromId": "n5",
+      "toId": "n6",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "r5",
+      "type": "PART_OF",
+      "fromId": "n5",
+      "toId": "n3",
+      "properties": {},
+      "style": {}
+    }
+  ],
+  "style": {
+    "font-family": "sans-serif",
+    "background-color": "#ffffff",
+    "background-image": "",
+    "background-size": "100%",
+    "node-color": "#ffffff",
+    "border-width": 4,
+    "border-color": "#000000",
+    "radius": 50,
+    "node-padding": 5,
+    "node-margin": 2,
+    "outside-position": "auto",
+    "node-icon-image": "",
+    "node-background-image": "",
+    "icon-position": "inside",
+    "icon-size": 64,
+    "caption-position": "inside",
+    "caption-max-width": 200,
+    "caption-color": "#000000",
+    "caption-font-size": 50,
+    "caption-font-weight": "normal",
+    "label-position": "inside",
+    "label-display": "pill",
+    "label-color": "#000000",
+    "label-background-color": "#ffffff",
+    "label-border-color": "#000000",
+    "label-border-width": 4,
+    "label-font-size": 40,
+    "label-padding": 5,
+    "label-margin": 4,
+    "directionality": "directed",
+    "detail-position": "inline",
+    "detail-orientation": "parallel",
+    "arrow-width": 5,
+    "arrow-color": "#000000",
+    "margin-start": 5,
+    "margin-end": 5,
+    "margin-peer": 20,
+    "attachment-start": "normal",
+    "attachment-end": "normal",
+    "relationship-icon-image": "",
+    "type-color": "#000000",
+    "type-background-color": "#ffffff",
+    "type-border-color": "#000000",
+    "type-border-width": 0,
+    "type-font-size": 16,
+    "type-padding": 5,
+    "property-position": "outside",
+    "property-alignment": "colon",
+    "property-color": "#000000",
+    "property-font-size": 16,
+    "property-font-weight": "normal"
+  }
+}
